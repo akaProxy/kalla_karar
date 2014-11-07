@@ -1,0 +1,113 @@
+body{
+    margin: 0;
+    background-color: aquamarine;
+}
+#slide{
+    position: relative;
+    background-color: bisque;
+    padding-top: 4em;
+    height: 11em;
+    width: 100%;
+}
+main{
+    position: relative;
+    width: 100%;
+    background-color: #E88;
+    margin: auto;
+}
+.card.post{
+    font-family: helvetica, arial;
+    margin: auto;
+    min-width: 28em;
+    max-width: 40em;
+    padding: 1em 2em;
+    /*width: 44%;
+    float: left;*/
+}
+.card .container {
+    background-color: #FFF;
+}
+#heading{
+    display: none;
+}
+@media screen and (max-width:32em), screen and (min-width:48em){
+    .card.post{
+        padding: 0;
+        min-width: 20em;
+        border-bottom: solid 2px #BBB;
+    }
+}
+@media screen and (min-width:48em){
+    main{
+        max-width: 40em;
+        margin-top: 1em;
+    }
+    #heading{
+        display: block;
+    }
+}
+@media screen and (max-width:32em){
+    .card.post.before-voting{
+        border-bottom: none;
+    }
+}
+
+.card .info .img-container{
+    position: relative;
+    width: 5em;
+    height: 5em;
+    border-radius: 5em;
+    overflow: hidden;
+    margin: 1em;
+    float: left;
+}
+.img-container img{
+    height: 100%;
+}
+.card h2{
+    margin: 0;
+    padding: 1em 0 0 0;
+}
+.info span {
+    display: block;
+}
+.info p{
+    color: grey;
+    font-size: 0.7em;
+}
+.info p span{
+    color: black;
+    font-size: 1.5em;
+    margin-left: 0.5em;
+}
+summary{
+    padding: 0 1em 1em 1em;
+    display: block;
+}
+#menu{
+    position: fixed;
+    top:0px;
+    height:4em;
+    width:100%;
+    background-color: red;
+    z-index: 99;
+}
+
+.card.voting{
+    background-color: #FFF;
+}
+.r-btn{
+    display:inline-block;
+    width:1em;
+    height:1em;
+    border-radius:1em;
+    background-color:white;
+    border: solid 1px #B99;
+}
+.radio-choice input{
+    display:none;
+}
+.radio-choice input:checked + label .r-btn{
+    background-color: #B99;
+    transition: background 0.2s ease;
+}
