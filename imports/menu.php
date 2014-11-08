@@ -1,5 +1,9 @@
 <div id="menu">
-    <img src="https://www.newfangled.com/wp-content/uploads/2014/08/stuffcontentmgrfiles2ac67e44c30a21635f8a9d498f832bc1cmisc_resized80_313_257_hamenu.png" />
+    <div id="menu-hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
     <span>BLGELK</span>
 </div>
 
