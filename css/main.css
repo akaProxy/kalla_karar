@@ -43,6 +43,7 @@ html, body{
     font-family: sans-serif;
     height: 3em;
     width: 100%;
+    display: none;
     background: red;
     position: fixed;
     text-align: center;
@@ -50,16 +51,16 @@ html, body{
 }
 #menu-hamburger {
     height: 1.4em;
-    width: 2em;
+    width: 1.5em;
     position: absolute;
     top: 50%;
-    margin-left: 0.5em;
+    margin-left: 0.8em;
     transform: translateY(-50%);
 }
 #menu-hamburger > div {
     height: 0.2em;
     width: 100%;
-    background: #4b4b4b;
+    background: #720000;
 }
 #menu-hamburger > div:nth-child(2){
     position: absolute;
