@@ -1,0 +1,82 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+#side-menu {
+    position: fixed;
+    width: 13em;
+    margin: 0;
+    padding: 0;
+    background: #333;
+    height: 100%;
+    display: none;
+    font-family: sans-serif;
+}
+/*Styling what ever the logo is. Could be img or txt*/
+#side-menu > img:first-child {
+    width: inherit;
+    height: auto;
+    margin-bottom: 0em;
+}
+#side-menu > ul {
+    padding: 0px;
+    margin-top: 0;
+}
+#side-menu > ul > li{s
+    list-style: none;
+    color: #f0f0f0;
+    padding-bottom: 1em;
+    margin-bottom: 0em;
+    padding-top: 1em;
+    padding-left: 3em;
+    border-bottom-style: solid;
+    border-bottom-color: #2a2a2a;
+    border-width: 1px;
+    border-top-color: #3c3c3c;
+    border-top-style: solid;
+    background-image: url("https://s3.amazonaws.com/media-p.slid.es/uploads/billymeinke/images/71162/icon_gift_white.png");
+    background-size: 1em;
+    background-repeat: no-repeat;
+    background-position: center left 1.2em;
+}
+#menu {
+    font-family: sans-serif;
+    height: 3em;
+    width: 100%;
+    display: none;
+    background: red;
+    position: fixed;
+    text-align: center;
+    min-width: 13em;
+}
+#menu-hamburger {
+    height: 1.4em;
+    width: 1.5em;
+    position: absolute;
+    top: 50%;
+    margin-left: 0.8em;
+    transform: translateY(-50%);
+}
+#menu-hamburger > div {
+    height: 0.2em;
+    width: 100%;
+    background: #720000;
+}
+#menu-hamburger > div:nth-child(2){
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+} 
+#menu-hamburger > div:nth-child(3){
+    position: absolute;
+    bottom: 0;
+}
+#menu > span {
+    position: absolute;
+    top: 50%;
+    color: white;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
