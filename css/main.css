@@ -1,3 +1,179 @@
+body{
+    margin: 0;
+    background-color: aquamarine;
+}
+#slide{
+    position: relative;
+    background-color: bisque;
+    padding-top: 4em;
+    height: 11em;
+    width: 100%;
+}
+main{
+    position: relative;
+    width: 100%;
+    background-color: #E88;
+    margin: auto;
+}
+.card{
+    font-family: helvetica, arial;
+    margin: auto;
+    min-width: 28em;
+    max-width: 40em;
+    padding: 1em 2em;
+    /*width: 44%;
+    float: left;*/
+}
+.card .container {
+    background-color: #FFF;
+}
+.card.voting{
+    background-color: #FFF;
+    position: relative;
+}
+.r-btn{
+    display:inline-block;
+    width:1em;
+    height:1em;
+    border-radius:1em;
+    background-color:white;
+    border: solid 1px #B99;
+}
+.radio-choice input{
+    display:none;
+}
+.radio-choice input:checked + label .r-btn{
+    background-color: #B99;
+    transition: background 0.2s ease;
+}
+#heading{
+    display: none;
+}
+
+/**Food**/
+h2.food{ background-color: #FCC}
+#food-container{ background-color: #FFF; padding: 2em 0; }
+#food-container .day{ max-width: 30em; margin: auto; }
+#food-container .day .info{ display: inline-block; width: 100%; }
+#food-container .day .info span{ float: right }
+#food-container .day .info .day{ float: left }
+#food-container .day .info .date{ }
+#food-container .day .info .month{ margin-right: 1em }
+#food-container .day .meals{ display: table; padding-left: 2em; }
+#food-container .day .meals .meal{ display: table-row }
+#food-container .day .meals .meal span{ display: table-cell }
+#food-container .day .meals .meal .name{ }
+#food-container .day .meals .meal .description{ }
+
+#ig-container ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#ig-container .ig-frame-container{
+    width: 33%;
+    overflow: hidden;
+    float: left;
+    display: block;
+}
+#ig-container .ig-frame{
+    padding: 1em;
+    display: block;
+    position: relative;
+}
+#ig-container .ig-frame img{ max-width: 100% }
+#ig-container .ig-frame .ig-info{
+    position: absolute;
+    bottom: 0;
+    padding-right: 1em;
+    opacity: 0;
+}
+#ig-container .ig-frame:hover .ig-info{
+    opacity: 1;
+}
+#ig-container .ig-frame .ig-info .description{}
+#ig-container .ig-frame .ig-info .ig-social{ display: none }
+#ig-container .ig-frame .ig-info .ig-social .ig-likes{}
+#ig-container .ig-frame .ig-info .ig-social .ig-comments{}
+
+
+
+@media screen and (max-width:32em), screen and (min-width:92em){
+    .card{
+        padding: 0;
+    }
+    .card.post{
+        min-width: 20em;
+        border-bottom: solid 2px #BBB;
+    }
+}
+@media screen and (min-width:92em){
+    #content{
+        padding: 0 5em;
+    }
+    main{
+        max-width: 90em;
+        margin-top: 1em;
+    }
+    #heading{
+        display: block;
+        margin: 0;
+        background-color: #FFF;
+    }
+    
+    .card.post{
+        float:left;
+    }
+    #external{
+        float: right;
+    }
+}
+@media screen and (max-width:32em){
+    .card.post.before-voting{
+        border-bottom: none;
+    }
+}
+
+.card .info .img-container{
+    position: relative;
+    width: 5em;
+    height: 5em;
+    border-radius: 5em;
+    overflow: hidden;
+    margin: 1em;
+    float: left;
+}
+.img-container img{
+    height: 100%;
+}
+.card h2{
+    margin: 0;
+    padding: 1em 0 0 0;
+}
+.info span {
+    display: block;
+}
+.info p{
+    color: grey;
+    font-size: 0.7em;
+}
+.info p span{
+    color: black;
+    font-size: 1.5em;
+    margin-left: 0.5em;
+}
+summary{
+    padding: 0 1em 1em 1em;
+    display: block;
+}
+#menu{
+    position: fixed;
+    top:0px;
+    height:4em;
+    width:100%;
+    background-color: red;
+    z-index: 99;
+}
 html, body{
     margin: 0;
     padding: 0;
