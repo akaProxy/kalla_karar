@@ -27,12 +27,12 @@ main{
 }
 .card{
     font-family: helvetica, arial;
-    margin: 1em auto;
+    margin: auto;
     min-width: 28em;
     max-width: 40em;
-    padding: 0em 0em;
-    border: solid #DDD 7px;
-    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5);
+    padding: 1em 2em;
+    /*border: solid #DDD 7px;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5);*/
     
     /*width: 44%;
     float: left;*/
@@ -200,14 +200,7 @@ summary{
 }
 
 
-#menu{
-    position: fixed;
-    top:0px;
-    height:4em;
-    width:100%;
-    background-color: red;
-    z-index: 99;
-}
+
 html, body{
     margin: 0;
     padding: 0;
@@ -259,10 +252,11 @@ html, body{
     height: 3em;
     width: 100%;
     display: none;
-    background: red;
+    background: #9D1B1B;
     position: fixed;
     text-align: center;
     min-width: 13em;
+    z-index: 99;
 }
 #menu-hamburger {
     height: 1.4em;
@@ -308,7 +302,7 @@ html, body{
 }
 
 /***Side-menu style when wide***/
-@media screen and (min-width:58em) and (max-width:98em),screen and (min-width:105em){
+@media screen and (min-width:54em) and (max-width:98em),screen and (min-width:105em){
     #side-menu{
         display: block;
         width: 13em;
