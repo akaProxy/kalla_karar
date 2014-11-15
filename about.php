@@ -7,11 +7,13 @@
     </head>
     
     <body id="about_body" class="about_text">
-        <!--<?php require("imports/menu.php"); ?> -->
-        
-        <h1 class="about_text">Blackebergs elevkår</h1>
-        
-        <img src="img/logo.jpg"/>
+        <?php require("imports/menu.php"); ?>
+        <div id="container">
+
+            <div class="header">
+                <img src="img/logo.jpg"/>
+            </div>
+
         
         <section id="organisation">
                      
@@ -22,7 +24,7 @@
         </section>
         
         <section id="styrelsen" >
-            
+            <div>
             <h1>Styrelsen</h1>
             <div class="styrelse-medlem">
                 <div class="styelse-img" style="background-image:url(https://scontent-b-ams.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/1496736_947749465239610_6187864700252811277_n.jpg?oh=590a901983fe124ed58d53165dbd5d96&oe=54E9DF85)"></div><br>
@@ -34,7 +36,7 @@
             </div>
 
             <div class="styrelse-medlem">
-                <div class="styelse-img" style="background-image:url(https://scontent-a-ams.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/1907301_713520255338087_7201349374469469603_n.jpg?oh=1c8862508e11eab19071e9ff7044b7e5&oe=551A90DC"></div></br>
+                <div class="styelse-img" style="background-image:url(https://scontent-a-ams.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/1907301_713520255338087_7201349374469469603_n.jpg?oh=1c8862508e11eab19071e9ff7044b7e5&oe=551A90DC)"></div></br>
                 <b>Fanny Voltaire Ekblad</b>
                 <p>
                     Vice Ordförande</br>
@@ -97,7 +99,7 @@
                     070 753 15 62
                 </p>
             </div>
-
+            </div>
         </section>
         
         <section id="utskott">
@@ -105,5 +107,6 @@
             <h1>Utskott</h1>
         
         </section>
+        </div>
     </body>
 </html> 
