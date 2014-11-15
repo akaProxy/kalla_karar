@@ -230,8 +230,12 @@ html, body{
     padding: 0px;
     margin-top: 0;
 }
-#side-menu > ul > li{s
+#side-menu > ul > li{
     list-style: none;
+}
+#side-menu > ul > li > a {
+    color: inherit;
+    text-decoration: none;
     color: #f0f0f0;
     padding-bottom: 1em;
     margin-bottom: 0em;
@@ -245,11 +249,8 @@ html, body{
     background-image: url("https://s3.amazonaws.com/media-p.slid.es/uploads/billymeinke/images/71162/icon_gift_white.png");
     background-size: 1em;
     background-repeat: no-repeat;
+    display: block;
     background-position: center left 1.2em;
-}
-#side-menu > ul > li > a {
-    color: inherit;
-    text-decoration: none;
 }
 #menu {
     font-family: sans-serif;
