@@ -12,9 +12,9 @@
     <img src="img/logo.jpg"/>
     
     <ul>
-        <li>Senaste nytt</li>
-        <li>Föreningar</li>
-        <li>Bli medlem</li>
-        <li>Engagera dig</li>
+        <li><a href="about.php">Om oss</a></li>
+        <li><a>Föreningsliv</a></li>
+        <li><a>Bli medlem</a></li>
+        <li><a>Engagera dig</a></li>
     </ul>
 </div>

@@ -1,26 +1,39 @@
 body{
     margin: 0;
-    background-color: aquamarine;
+    background-color: #DDD;
 }
 #slide{
     position: relative;
-    background-color: bisque;
-    padding-top: 4em;
-    height: 11em;
+    height: 27em;
     width: 100%;
+    margin-bottom: -3em;
+    overflow: hidden;
+}
+.slide {
+    height: inherit;
+    width: inherit;
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+    float: left;
+}
+.slide > h1 {
+    margin: 0;
 }
 main{
     position: relative;
     width: 100%;
-    background-color: #E88;
     margin: auto;
 }
 .card{
     font-family: helvetica, arial;
-    margin: auto;
+    margin: 1em auto;
     min-width: 28em;
     max-width: 40em;
-    padding: 1em 2em;
+    padding: 0em 0em;
+    border: solid #DDD 7px;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5);
+    
     /*width: 44%;
     float: left;*/
 }
@@ -39,6 +52,22 @@ main{
     background-color:white;
     border: solid 1px #B99;
 }
+.styrelse-medlem {
+    display: inline-block;
+    vertical-align: top;
+    margin: 2em 1em;
+}
+.styrelse-medlem > div {
+    height: 10em;
+    width: 10em;
+    border-radius: 5em;
+    background-size: cover;
+    background-position: center;
+}
+.styrelse-medlem > p {
+    margin: 0;
+    padding: 0;
+}
 .radio-choice input{
     display:none;
 }
@@ -48,6 +77,9 @@ main{
 }
 #heading{
     display: none;
+}
+.about_text {
+    color:#272727;
 }
 
 /**Food**/
@@ -184,9 +216,9 @@ html, body{
     position: fixed;
     margin: 0;
     padding: 0;
-    background: #333;
+    background: #9D1B1B;
     height: 100%;
-    display: none;
+    z-index: 200;
     font-family: sans-serif;
     z-index: 99;
 }
@@ -200,21 +232,26 @@ html, body{
     padding: 0px;
     margin-top: 0;
 }
-#side-menu > ul > li{s
+#side-menu > ul > li{
     list-style: none;
+}
+#side-menu > ul > li > a {
+    color: inherit;
+    text-decoration: none;
     color: #f0f0f0;
     padding-bottom: 1em;
     margin-bottom: 0em;
     padding-top: 1em;
     padding-left: 3em;
     border-bottom-style: solid;
-    border-bottom-color: #2a2a2a;
+    border-bottom-color: #8d1616;
     border-width: 1px;
-    border-top-color: #3c3c3c;
+    border-top-color: #b52525;
     border-top-style: solid;
     background-image: url("https://s3.amazonaws.com/media-p.slid.es/uploads/billymeinke/images/71162/icon_gift_white.png");
     background-size: 1em;
     background-repeat: no-repeat;
+    display: block;
     background-position: center left 1.2em;
 }
 #menu {
@@ -281,7 +318,6 @@ html, body{
     }
 }
 
-
 @media screen and (max-width:43em){
     #menu{
         display: block;
@@ -292,4 +328,16 @@ html, body{
     #container{
         margin-left: 0;
     }
+}
+
+
+#about_body{
+    text-align: center;
+}
+#about_body > img {
+    height: 30em;
+}
+#about_body > #styrelsen {
+    max-width: 50em;
+    display: inline-block;
 }
