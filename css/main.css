@@ -346,11 +346,24 @@ html, body{
     margin-top: 0.5em;
     margin-bottom: 0em;
 }
-#about_body > #container {
-    margin-left: 13em;
-}
 #about_body > #container > .header {
-    height: 25em;
     background: rgba(179, 33, 33, 0.6);
-    margin-bottom: 13em;
+}
+@media screen and (min-width:63em){
+    #about_body > #container > .header > img {
+        width: 50em;
+    }
+    #about_body > #container > .header {
+        height: 25em;
+        margin-bottom: 10em;
+    }
+}
+@media screen and (max-width:63em){
+    #about_body > #container > .header > img {
+        width: 30em;
+    }
+        #about_body > #container > .header {
+        height: 15em;
+        margin-bottom: 7em;
+    }
 }
