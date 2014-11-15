@@ -340,6 +340,9 @@ html, body{
     max-width: 50em;
     display: inline-block;
 }
+#organisation {
+    margin-bottom: 2em;
+}
 #styrelsen > div > h1 {
     font-style: italic;
     font-size: 3em;
