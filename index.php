@@ -28,6 +28,17 @@ Joina blackans programmeringsförening idag!
     <?php require('imports/menu.php'); ?>
     <div id="container">
         <header id="slide">
+            <div class="slide" style="background-image:url(https://scontent-a-ams.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10393812_358370684328754_4374674382418331573_n.jpg?oh=c64803078fe5a9fd655001b158a873f2&oe=54EC1974)">
+                <h1>
+                    Men hej! 
+                </h1>
+            </div>
+            <div class="slide" style="background-image:url(https://scontent-a-ams.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10393812_358370684328754_4374674382418331573_n.jpg?oh=c64803078fe5a9fd655001b158a873f2&oe=54EC1974)">
+                <h1>
+                    Men hej! 
+                </h1>
+            </div>
+            
         </header>
         <div id="content">
             <main>
