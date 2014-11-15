@@ -370,3 +370,13 @@ html, body{
         margin-bottom: 7em;
     }
 }
+@media screen and (max-width:43em){
+    #about_body > #container > .header > img {
+        width: 30em;
+    }
+        #about_body > #container > .header {
+        height: 15em;
+        padding-top: 3em;
+        margin-bottom: 7em;
+    }
+}
