@@ -29,11 +29,6 @@ Joina blackans programmeringsförening idag!
     <?php require('imports/menu.php'); ?>
     <div id="container">
         <header id="slide">
-            <div id="slider-images">
-                <img class="relative active" alt="" src="http://lorempixel.com/1500/800/" width="1500" height="800">
-                <img alt="" src="http://lorempixel.com/1501/400/" width="1501" height="400">
-                <img alt="" src="http://lorempixel.com/1502/800/" width="1502" height="800">
-            </div>
             <div id="slider-info">
                 <!--span class="left"></span-->
                 <span class="texts">
@@ -51,6 +46,11 @@ Joina blackans programmeringsförening idag!
                     </div>
                 </span>
                 <!--span class="right"></span-->
+            </div>
+            <div id="slider-images">
+                <img class="relative active" alt="" src="http://lorempixel.com/1500/800/" width="1500" height="800">
+                <img alt="" src="http://lorempixel.com/1501/400/" width="1501" height="400">
+                <img alt="" src="http://lorempixel.com/1502/800/" width="1502" height="800">
             </div>
         </header>
         <div id="content">

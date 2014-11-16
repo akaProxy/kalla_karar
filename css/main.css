@@ -50,6 +50,7 @@ html, body{
     width: 34em;
     height: 7em;
     overflow: hidden;
+    z-index: 10;
 }
 #slider-info > .left,#slider-info > .right{
     position: absolute;
@@ -99,6 +100,19 @@ html, body{
 }
 #slider-info .texts .info-box p{
     margin: 0.2em 0;
+}
+@media screen and (max-width:58em){
+    #slide{
+        margin-bottom: -3em;
+    }
+    #slider-info{
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: auto;
+        border-radius: 0;
+    }
 }
 
 main{
@@ -400,6 +414,7 @@ summary{
     }
     #container{
         margin-left: 0;
+        padding-top: 3em;
     }
 }
 
