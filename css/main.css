@@ -56,10 +56,13 @@ main{
     display: inline-block;
     vertical-align: top;
     margin: 2em 1em;
+    text-align: center;
 }
 .styrelse-medlem > div {
     height: 10em;
     width: 10em;
+    display: inline-block;
+    margin-bottom: 0.5em;
     border-radius: 5em;
     background-size: cover;
     background-position: center;
@@ -378,5 +381,15 @@ html, body{
         height: 15em;
         padding-top: 3em;
         margin-bottom: 7em;
+    }
+}
+@media screen and (max-width:30em){
+    #about_body > #container > .header > img {
+        width: 15em;
+    }
+    #about_body > #container > .header {
+        height: 7em;
+        padding-top: 3em;
+        margin-bottom: 5em;
     }
 }
