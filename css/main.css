@@ -56,13 +56,17 @@ main{
     display: inline-block;
     vertical-align: top;
     margin: 2em 1em;
+    text-align: center;
 }
 .styrelse-medlem > div {
     height: 10em;
     width: 10em;
+    display: inline-block;
+    margin-bottom: 0.5em;
     border-radius: 5em;
     background-size: cover;
     background-position: center;
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.3);
 }
 .styrelse-medlem > p {
     margin: 0;
@@ -211,8 +215,8 @@ html, body{
     padding: 0;
     background: #9D1B1B;
     height: 100%;
-    z-index: 200;
     font-family: sans-serif;
+    text-align: left;
     z-index: 99;
 }
 /*Styling what ever the logo is. Could be img or txt*/
@@ -331,7 +335,61 @@ html, body{
 #about_body > img {
     height: 30em;
 }
-#about_body > #styrelsen {
+#styrelsen {
+    width: 100%;
+    background: rgba(0,0,0,0.07)
+}
+#styrelsen > div {
     max-width: 50em;
     display: inline-block;
+}
+#organisation {
+    margin-bottom: 2em;
+}
+#styrelsen > div > h1 {
+    font-style: italic;
+    font-size: 3em;
+    margin-top: 0.5em;
+    margin-bottom: 0em;
+}
+#about_body > #container > .header {
+    background: rgba(179, 33, 33, 0.6);
+}
+@media screen and (min-width:63em){
+    #about_body > #container > .header > img {
+        width: 50em;
+    }
+    #about_body > #container > .header {
+        height: 25em;
+        margin-bottom: 10em;
+    }
+}
+@media screen and (max-width:63em){
+    #about_body > #container > .header > img {
+        width: 30em;
+    }
+        #about_body > #container > .header {
+        height: 15em;
+        margin-bottom: 7em;
+    }
+}
+@media screen and (max-width:43em){
+    #about_body > #container > .header > img {
+        width: 30em;
+    }
+        #about_body > #container > .header {
+        height: 15em;
+        padding-top: 3em;
+        margin-bottom: 7em;
+    }
+}
+@media screen and (max-width:30em){
+    #about_body > #container > .header > img {
+        width: 15em;
+    }
+    #about_body > #container > .header {
+        height: 7em;
+        padding-top: 3em;
+        margin-bottom: 5em;
+    }
 }
