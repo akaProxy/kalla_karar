@@ -211,6 +211,8 @@ html, body{
     padding: 0;
     background: #9D1B1B;
     height: 100%;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3),0 0 50px 0 rgba(0, 0, 0, 0.25);
+    border-right: solid 1px #931F1F;
     z-index: 200;
     font-family: sans-serif;
     z-index: 99;
@@ -257,6 +259,7 @@ html, body{
     text-align: center;
     min-width: 13em;
     z-index: 99;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.3);
 }
 #menu-hamburger {
     height: 1.4em;
