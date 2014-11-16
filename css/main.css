@@ -14,27 +14,31 @@ html, body{
 #slide{
     position: relative;
     max-height: 80%;
+    min-height: 40%;
     width: 100%;
-    margin-bottom: -3em;
+    margin-bottom: -6em;
     overflow: hidden;
 }
 #slider-images{
     position: relative;
     width: 100%;
+    transition: height 1s ease;
 }
 #slider-images img{
     position: absolute;
     width: 100%;
+    height: auto;
     visibility: hidden;
     opacity: 0;
-    transition: opacity 1s ease;
-    transition-delay: visibility 0s;
+    transition: opacity 1s ease, visibility 0s linear 1s;
+}
+#slider-images img.relative{
+    position: relative;
 }
 #slider-images img.active{
-    position: relative;
     visibility: visible;
     opacity: 1;
-    transition-delay: visibility 1s;
+    transition: opacity 1s ease, visibility 0s linear 0s;
 }
 #slider-info{
     position: absolute;
@@ -76,20 +80,20 @@ html, body{
     display: none;
     position: absolute;
     height: 100%;
-    transition: transform 1s ease;
     color: #FFF;
     /*text-shadow: 1px 1px #333;*/
     text-align: left;
 }
 #slider-info .texts .info-box.vissible{
     display: block;
+    transition: transform 1s ease;
 }
-#slider-info .texts .info-box.left{
+/*#slider-info .texts .info-box.left{
     transform: translate(-150%, 0);
 }
 #slider-info .texts .info-box.right{
     transform: translate(-150%, 0);
-}
+}*/
 #slider-info .texts .info-box h2{
     margin: 0.5em 2em;
 }

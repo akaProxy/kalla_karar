@@ -13,6 +13,7 @@ which can be found in the project root
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="js/slide.js"></script>
 </head>
 <body>
 <!--
@@ -29,9 +30,9 @@ Joina blackans programmeringsförening idag!
     <div id="container">
         <header id="slide">
             <div id="slider-images">
-                <img class="active" alt="" src="http://lorempixel.com/1500/800/">
-                <img alt="" src="http://lorempixel.com/1501/800/">
-                <img alt="" src="http://lorempixel.com/1502/800/">
+                <img class="relative active" alt="" src="http://lorempixel.com/1500/800/" width="1500" height="800">
+                <img alt="" src="http://lorempixel.com/1501/400/" width="1501" height="400">
+                <img alt="" src="http://lorempixel.com/1502/800/" width="1502" height="800">
             </div>
             <div id="slider-info">
                 <!--span class="left"></span-->
