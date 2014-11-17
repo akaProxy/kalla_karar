@@ -10,8 +10,9 @@ var SLIDER = function(){
         requestAnimationFrame(function(){
             slides = [];
             slides.active = null;
-            slides.parrent = {all: document.getElementById('slider-info'),images:document.getElementById('slider-images')}
-            slides.parrent.texts = slides.parrent.all.getElementsByClassName('texts')[0];
+            slides.parrent = {all: document.getElementById('slide'),
+                              images:document.getElementById('slider-images'),
+                              texts:document.getElementById('slider-info').getElementsByClassName('texts')[0]};
             var images = slides.parrent.images.children;
             var texts = slides.parrent.texts.children;
             
@@ -34,6 +35,8 @@ var SLIDER = function(){
             }
             if(!slides.active)slides.active = 0;
             slides.parrent.images.style.height = slides[slides.active].image.getBoundingClientRect().height + 'px';
+            
+            if('ontouchstart' in window)enableTouch(slides.parrent.all);
             
             console.log('I\'m running');
         });
@@ -77,6 +80,43 @@ var SLIDER = function(){
         if(pos<0)pos=slides.length-1;
         goTo(pos,0);
     };
+    
+    
+    
+    
+    
+    //Hej och hoj!
+    var enableTouch = function(container){
+        var startX,
+            startY,
+            start,
+            timeThreshold = 0.8, //pixels per milisec
+            lengthThreshold = 0.4, //length relative to screenwidth
+            ratio = 3; //length/height;
+
+        container.addEventListener('touchstart', function(e){
+            startX = e.changedTouches[0].pageX;
+            startY = e.changedTouches[0].pageY;
+            start = e.timeStamp;
+        }, false);
+
+        container.addEventListener('touchend', function(e){
+            var x = e.changedTouches[0].pageX-startX,
+                y = e.changedTouches[0].pageY-startY,
+                time = (e.timeStamp-start);
+
+            if(((Math.abs(x)/time)>timeThreshold /*|| (Math.abs(x)-window.innerWidth*lengthThreshold)>0*/) && Math.abs(x/y)>ratio){
+                if(x<0)next();
+                else prev();
+            }
+        }, false);
+    }
+    
+    
+    
+    
+    
+    
     
     return {init:init, goTo:goTo, next:next, prev:prev};
 }();
