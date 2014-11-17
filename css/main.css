@@ -1,25 +1,120 @@
-body{
+html, body{
     margin: 0;
+    padding: 0;
     background-color: #DDD;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    font-family: helvetica, arial;
+}
+#container{
+    position: relative;
+    height: 100%;
 }
 #slide{
     position: relative;
-    height: 27em;
+    max-height: 80%;
+    min-height: 40%;
     width: 100%;
-    margin-bottom: -3em;
+    margin-bottom: -6em;
     overflow: hidden;
 }
-.slide {
-    height: inherit;
-    width: inherit;
-    background-size: cover;
+#slider-images{
+    position: relative;
+    width: 100%;
+    transition: height 1s ease;
+}
+#slider-images img{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s ease, visibility 0s linear 1s;
+}
+#slider-images img.relative{
+    position: relative;
+}
+#slider-images img.active{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s ease, visibility 0s linear 0s;
+}
+#slider-info{
+    position: absolute;
+    top:1em;
+    right: 1em;
+    background-color: #2A9D4A;
+    border-radius: 1em;
+    width: 40em;
+    width: 34em;
+    height: 7em;
+    overflow: hidden;
+    z-index: 10;
+}
+#slider-info > .left,#slider-info > .right{
+    position: absolute;
+    top:0;
+    bottom:0;
+    width: 5em;
+    background-repeat: no-repeat;
     background-position: center;
-    display: inline-block;
-    float: left;
+    background-size: contain;
 }
-.slide > h1 {
-    margin: 0;
+#slider-info > .left{
+    left: 0;
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTAwbW0iIGhlaWdodD0iMTAwbW0iIHN0eWxlPSJzaGFwZS1yZW5kZXJpbmc6Z2VvbWV0cmljUHJlY2lzaW9uOyB0ZXh0LXJlbmRlcmluZzpnZW9tZXRyaWNQcmVjaXNpb247IGltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7IGZpbGwtcnVsZTpldmVub2RkOyBjbGlwLXJ1bGU6ZXZlbm9kZCIgdmlld0JveD0iMCAwIDEgMiIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+LmZ7ZmlsbDp3aGl0ZX08L3N0eWxlPjwvZGVmcz48Zz48cG9seWdvbiBjbGFzcz0iZiIgcG9pbnRzPSIxLDAgMSwyIDAsMSIvPjwvZz48L3N2Zz4=");
 }
+#slider-info > .right{
+    right: 0;
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTAwbW0iIGhlaWdodD0iMTAwbW0iIHN0eWxlPSJzaGFwZS1yZW5kZXJpbmc6Z2VvbWV0cmljUHJlY2lzaW9uOyB0ZXh0LXJlbmRlcmluZzpnZW9tZXRyaWNQcmVjaXNpb247IGltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7IGZpbGwtcnVsZTpldmVub2RkOyBjbGlwLXJ1bGU6ZXZlbm9kZCIgdmlld0JveD0iMCAwIDEgMiIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+LmZ7ZmlsbDp3aGl0ZX08L3N0eWxlPjwvZGVmcz48Zz48cG9seWdvbiBjbGFzcz0iZiIgcG9pbnRzPSIwLDAgMCwyIDEsMSIvPjwvZz48L3N2Zz4=");
+}
+#slider-info > .texts{
+    position: absolute;
+    left:0px;
+    right: 0px;
+    margin: 0 5em;
+    margin: 0 2em;
+    height: 100%;
+}
+#slider-info .texts .info-box{
+    display: none;
+    position: absolute;
+    height: 100%;
+    color: #FFF;
+    /*text-shadow: 1px 1px #333;*/
+    text-align: left;
+}
+#slider-info .texts .info-box.vissible{
+    display: block;
+    transition: transform 1s ease;
+}
+/*#slider-info .texts .info-box.left{
+    transform: translate(-150%, 0);
+}
+#slider-info .texts .info-box.right{
+    transform: translate(-150%, 0);
+}*/
+#slider-info .texts .info-box h2{
+    margin: 0.5em 2em;
+}
+#slider-info .texts .info-box p{
+    margin: 0.2em 0;
+}
+@media screen and (max-width:58em){
+    #slide{
+        margin-bottom: -3em;
+    }
+    #slider-info{
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: auto;
+        border-radius: 0;
+    }
+}
+
 main{
     position: relative;
     width: 100%;
@@ -182,8 +277,10 @@ h2.food{ background-color: #FCC}
 .img-container img{
     height: 100%;
 }
-.card h2{
+.card h1, .card h2{
     margin: 0;
+}
+.card h2{
     padding: 1em 0 0 0;
 }
 .info span {
@@ -205,10 +302,6 @@ summary{
 
 
 
-html, body{
-    margin: 0;
-    padding: 0;
-}
 #side-menu {
     position: fixed;
     margin: 0;
@@ -325,6 +418,7 @@ html, body{
     }
     #container{
         margin-left: 0;
+        padding-top: 3em;
     }
 }
 
