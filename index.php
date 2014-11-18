@@ -13,6 +13,8 @@ which can be found in the project root
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--script src="res/GASP/minified/TweenMax.min.js"></script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
     <script src="js/slide.js"></script>
 </head>
 <body>

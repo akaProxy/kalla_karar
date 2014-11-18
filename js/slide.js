@@ -20,7 +20,8 @@ var SLIDER = function(){
                 images[i].classList.remove('relative');
                 images[i].sliderIndex = i;
                 texts[i].classList.remove('vissible');
-                texts[i].style[transformName] = 'translate(0%, 0)';
+                //texts[i].style[transformName] = 'translate(0%, 0)';
+                TweenLite.to(texts[i], 0, {xPercent:0});
                 
                 if(images[i].classList.contains('active')){
                     if(slides.active===null)slides.active = i,texts[i].classList.add('vissible');
@@ -54,7 +55,9 @@ var SLIDER = function(){
     };
     var getActive = function(){return slides.parent.images.getElementsByClassName('active')[0].sliderIndex};
     var place = function(pos, direction, val){
-        slides[pos].text.style[transformName] = 'translate('+(direction == 1 ? '':'-')+(val||150)+'%, 0)';
+        //slides[pos].text.style[transformName] = 'translate('+(direction == 1 ? '':'-')+(val||150)+'%, 0)';
+        val=(val||150)*(direction == 1 ? 1:-1);
+        TweenLite.to(slides[pos].text, 0, {xPercent:val});
     };
     var goTo = function(pos, direction,startHere){
         var prev = getActive();
@@ -66,8 +69,11 @@ var SLIDER = function(){
             slides.parent.images.style.height = slides[pos].image.getBoundingClientRect().height + 'px';
             
             //texts-stuff
-            slides[prev].text.style[transformName] = 'translate('+(direction == 1 ? '-':'')+'150%, 0)';
-            slides[pos].text.style[transformName] = 'translate(0%, 0)';
+            //slides[prev].text.style[transformName] = 'translate('+(direction == 1 ? '-':'')+'150%, 0)';
+            TweenLite.to(slides[prev].text, 1, {xPercent:150*(direction == 1 ? -1:1)});
+            //slides[pos].text.style[transformName] = 'translate(0%, 0)';
+            TweenLite.to(slides[pos].text, 1, {xPercent:0});
+            
         };
         var makeVissible = function(){
             slides[pos].text.classList.add('vissible');
@@ -130,13 +136,12 @@ var SLIDER = function(){
 
         container.addEventListener('touchmove',function(e){
             //THIS NEEDS TO BE DONE WITH JS-ANIMATIONS
-            /*requestAnimationFrame(function(){
-                var x = e.changedTouches[0].pageX-startX;
-                place(elmntPos[0],1,x-150);
-                place(elmntPos[1],1,x);
-                place(elmntPos[2],1,150-x);
-                console.log('WE MOVAED!');
-            });*/
+            var x = 150*(e.changedTouches[0].pageX-startX)/window.innerWidth;
+            TweenLite.to(slides[elmntPos[1]].text, 1, {xPercent:x});
+            /*place(elmntPos[0],1,x-150);
+            place(elmntPos[1],1,x);
+            place(elmntPos[2],1,150-x);*/
+            console.log('WE MOVAED!');
         },false);
 
         container.addEventListener('touchend', function(e){
@@ -147,6 +152,8 @@ var SLIDER = function(){
             if(((Math.abs(x)/time)>timeThreshold /*|| (Math.abs(x)-window.innerWidth*lengthThreshold)>0*/) && Math.abs(x/y)>ratio){
                 if(x<0)next();
                 else prev();
+            }else{
+                TweenLite.to(slides[elmntPos[1]].text, 1, {xPercent:0});
             }
         }, false);
     }

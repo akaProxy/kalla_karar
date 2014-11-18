@@ -87,7 +87,7 @@ html, body{
 }
 #slider-info .texts .info-box.vissible{
     display: block;
-    transition: transform 1s ease;
+    /*transition: transform 1s ease;*/
 }
 /*#slider-info .texts .info-box.left{
     transform: translate(-150%, 0);
