@@ -61,19 +61,20 @@ var SLIDER = function(){
         val=(val||150)*(direction == 1 ? 1:-1);
         TweenLite.to(slides[pos].text, 0, {xPercent:val});
     };
+    var switchActive = function(prev,pos){
+        if(!slides[pos])throw new Error('Slide not existing');
+        slides[prev].image.classList.remove('active');
+        slides[pos].image.classList.add('active');
+        //Change size of container
+        slides.parent.images.style.height = slides[pos].image.getBoundingClientRect().height + 'px';
+    };
     var goTo = function(pos, direction,startHere){
         var prev = getActive();
         var main = function(){
-            if(!slides[pos])throw new Error('Slide not existing');
-            slides[prev].image.classList.remove('active');
-            slides[pos].image.classList.add('active');
-            //Change size of container
-            slides.parent.images.style.height = slides[pos].image.getBoundingClientRect().height + 'px';
+            switchActive(prev,pos);
             
             //texts-stuff
-            //slides[prev].text.style[transformName] = 'translate('+(direction == 1 ? '-':'')+'150%, 0)';
             TweenLite.to(slides[prev].text, 1, {xPercent:150*(direction == 1 ? -1:1)});
-            //slides[pos].text.style[transformName] = 'translate(0%, 0)';
             TweenLite.to(slides[pos].text, 1, {xPercent:0});
             
         };
@@ -92,15 +93,15 @@ var SLIDER = function(){
             requestAnimationFrame(makeVissible);
         });
     };
-    var next = function(){
+    var next = function(stayHere){
         var pos=getActive()+1;
         if(pos>=slides.length)pos=0;
-        goTo(pos,1);
+        goTo(pos,1,stayHere);
     };
-    var prev = function(){
+    var prev = function(stayHere){
         var pos=getActive()-1;
         if(pos<0)pos=slides.length-1;
-        goTo(pos,0);
+        goTo(pos,0,stayHere);
     };
     
     //Hej och hoj!
@@ -111,7 +112,9 @@ var SLIDER = function(){
             timeThreshold = 0.8, //pixels per milisec
             lengthThreshold = 0.4, //length relative to screenwidth
             ratio = 3, //length/height
-            elmntPos = [];
+            elmntPos = [],
+            relativeActive,
+            PERCENTAGE_LENGTH = 120;
 
         container.addEventListener('touchstart', function(e){
             startX = e.changedTouches[0].pageX;
@@ -122,41 +125,56 @@ var SLIDER = function(){
             for(var i=-1,j=getActive()-2;i<=1;i++){
                 if(++j>=slides.length)j=0;
                 else if(j<0)j=slides.length-1;
+                slides[j].text.classList.add('vissible');
                 elmntPos.push(j);
                 if(i)place(j,i);
             }
-            /*stuff(-150);
-            place(i,0);
-            stuff(0);
-            stuff(150);
-            place(i,1);*/
-            
-                //var match = new RegExp('translate\\(((?:-|)\\d+)%,').exec(slides[i].text.style[transformName]);
-                //elmntPos.push({pos:parseInt((match[1]))});
-            console.log(elmntPos);
+            relativeActive = -1;
+            //array[-1] fix
+            elmntPos[-1]=elmntPos[1];
         }, false);
 
+        var moveStuff = function(pos){
+            TweenLite.to(slides[elmntPos[0]].text, 1, {xPercent:pos-PERCENTAGE_LENGTH});
+            TweenLite.to(slides[elmntPos[1]].text, 1, {xPercent:pos});
+            TweenLite.to(slides[elmntPos[2]].text, 1, {xPercent:PERCENTAGE_LENGTH+pos});
+        };
         container.addEventListener('touchmove',function(e){
             //THIS NEEDS TO BE DONE WITH JS-ANIMATIONS
-            var x = 150*(e.changedTouches[0].pageX-startX)/window.innerWidth;
-            TweenLite.to(slides[elmntPos[1]].text, 1, {xPercent:x});
-            /*place(elmntPos[0],1,x-150);
-            place(elmntPos[1],1,x);
-            place(elmntPos[2],1,150-x);*/
-            console.log('WE MOVAED!');
+            var x = PERCENTAGE_LENGTH*(e.changedTouches[0].pageX-startX)/window.innerWidth;
+            if(x<=-50 && relativeActive!=0)
+                switchActive(elmntPos[relativeActive],elmntPos[(relativeActive=2)]);
+            else if(x>=50 && relativeActive!=2)
+                switchActive(elmntPos[relativeActive],elmntPos[(relativeActive=0)]);
+            else if(x>-50 && x<50 && relativeActive!=1 && relativeActive!=-1)
+                switchActive(elmntPos[relativeActive],elmntPos[(relativeActive=1)]);
+            moveStuff(x);
         },false);
 
         container.addEventListener('touchend', function(e){
-            var x = e.changedTouches[0].pageX-startX,
-                y = e.changedTouches[0].pageY-startY,
-                time = (e.timeStamp-start);
-
-            if(((Math.abs(x)/time)>timeThreshold /*|| (Math.abs(x)-window.innerWidth*lengthThreshold)>0*/) && Math.abs(x/y)>ratio){
-                if(x<0)next();
-                else prev();
-            }else{
-                TweenLite.to(slides[elmntPos[1]].text, 1, {xPercent:0});
+            switch(relativeActive){
+                case -1:
+                    var x = e.changedTouches[0].pageX-startX,
+                        y = e.changedTouches[0].pageY-startY,
+                        time = (e.timeStamp-start);
+                    if(((Math.abs(x)/time)>timeThreshold /*|| (Math.abs(x)-window.innerWidth*lengthThreshold)>0*/) && Math.abs(x/y)>ratio){
+                        if(x<0)next(true);
+                        else prev(true);
+                    }else{
+                        moveStuff(0);
+                    }
+                    break;
+                case 0:
+                    moveStuff(PERCENTAGE_LENGTH);
+                    break;
+                case 1:
+                    moveStuff(0);
+                    break;
+                case 2:
+                    moveStuff(-PERCENTAGE_LENGTH);
+                    break;
             }
+            
         }, false);
     }
     
