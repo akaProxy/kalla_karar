@@ -17,6 +17,13 @@ var SLIDER = function(){
             var texts = slides.parent.texts.children;
             
             for(var i=0;i<images.length || i<texts.length;i++){
+                if(i>=images.length || i>=texts.length){
+                    if(i>=images.length)texts[i].style.display = 'none';
+                    if(i>=texts.length)images[i].style.display = 'none';
+                    console.warn('images and texts does not match. Removes overflow');
+                    break;
+                }
+                
                 images[i].classList.remove('relative');
                 images[i].sliderIndex = i;
                 texts[i].classList.remove('vissible');
@@ -29,11 +36,6 @@ var SLIDER = function(){
                 }
                 
                 slides.push({image:images[i],text:texts[i]});
-                if(i>=images.length || i>=texts.length){
-                    if(i>=images.length)images[i].style.display = 'none';
-                    if(i>=texts.length)texts[i].style.display = 'none';
-                    console.warn('images and texts does not match. Removes overflow');
-                }
             }
             if(!slides.active)slides.active = 0;
             slides.parent.images.style.height = slides[slides.active].image.getBoundingClientRect().height + 'px';
