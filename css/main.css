@@ -213,7 +213,7 @@ html, body{
     position: fixed;
     margin: 0;
     padding: 0;
-    background: #9D1B1B;
+    background-color: #9D1B1B;
     height: 100%;
     font-family: sans-serif;
     text-align: left;
@@ -256,7 +256,7 @@ html, body{
     height: 3em;
     width: 100%;
     display: none;
-    background: #9D1B1B;
+    background-color: #9D1B1B;
     position: fixed;
     text-align: center;
     min-width: 13em;
@@ -273,7 +273,7 @@ html, body{
 #menu-hamburger > div {
     height: 0.2em;
     width: 100%;
-    background: #720000;
+    background-color: #720000;
 }
 #menu-hamburger > div:nth-child(2){
     position: absolute;
@@ -337,7 +337,7 @@ html, body{
 }
 #styrelsen {
     width: 100%;
-    background: rgba(0,0,0,0.07)
+    background-color: #CDCDCD
 }
 #styrelsen > div {
     max-width: 50em;
@@ -353,7 +353,7 @@ html, body{
     margin-bottom: 0em;
 }
 #about_body > #container > .header {
-    background: rgba(179, 33, 33, 0.6);
+    background-color: rgba(179, 33, 33, 0.6);
 }
 @media screen and (min-width:63em){
     #about_body > #container > .header > img {
