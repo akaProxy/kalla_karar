@@ -13,6 +13,9 @@ which can be found in the project root
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--script src="res/GASP/minified/TweenMax.min.js"></script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script src="js/slide.js"></script>
 </head>
 <body>
 <!--
@@ -28,22 +31,34 @@ Joina blackans programmeringsförening idag!
     <?php require('imports/menu.php'); ?>
     <div id="container">
         <header id="slide">
-            <div class="slide" style="background-image:url(https://scontent-a-ams.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10393812_358370684328754_4374674382418331573_n.jpg?oh=c64803078fe5a9fd655001b158a873f2&oe=54EC1974)">
-                <h1>
-                    Men hej! 
-                </h1>
+            <div id="slider-info">
+                <!--span class="left"></span-->
+                <span class="texts">
+                    <div class="info-box vissible">
+                        <h2>INSPARK!</h2>
+                        <p>1. Låt oss börja ett nytt awesome år på vår awsome skola vars elevkår jobbar på en awesome hemsida. Vi säljer biljätter i ljushallen. Kom och köp!</p>
+                    </div>
+                    <div class="info-box">
+                        <h2>INSPARK!</h2>
+                        <p>2. Låt oss börja ett nytt awesome år på vår awsome skola vars elevkår jobbar på en awesome hemsida. Vi säljer biljätter i ljushallen. Kom och köp!</p>
+                    </div>
+                    <div class="info-box">
+                        <h2>INSPARK!</h2>
+                        <p>3. Låt oss börja ett nytt awesome år på vår awsome skola vars elevkår jobbar på en awesome hemsida. Vi säljer biljätter i ljushallen. Kom och köp!</p>
+                    </div>
+                </span>
+                <!--span class="right"></span-->
             </div>
-            <div class="slide" style="background-image:url(https://scontent-a-ams.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10393812_358370684328754_4374674382418331573_n.jpg?oh=c64803078fe5a9fd655001b158a873f2&oe=54EC1974)">
-                <h1>
-                    Men hej! 
-                </h1>
+            <div id="slider-images">
+                <img class="relative active" alt="" src="http://lorempixel.com/1500/800/" width="1500" height="800">
+                <img alt="" src="http://lorempixel.com/1501/400/" width="1501" height="400">
+                <img alt="" src="http://lorempixel.com/1502/800/" width="1502" height="800">
             </div>
-            
         </header>
         <div id="content">
             <main>
                 <div id="heading" class="card">
-                    <h2>Nyheter!</h2>
+                    <h1>Nyheter!</h1>
                 </div>
                 <div class="card post before-voting">
                     <div class="container">
